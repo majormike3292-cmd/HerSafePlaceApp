@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +7,55 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background:#0d0010;color:white;text-align:center;font-family:Arial;">
+<body>
 
-<h1>Ashley Nicole ✝️💜</h1>
+<div class="container">
 
-<img src="family.jpg" style="width:90%;max-width:300px;border-radius:20px;">
+<h1 onclick="toggleSecret()">Ashley Nicole ✝️💜</h1>
 
-<p>You are loved. You are not alone. ✝️💜</p>
+<p id="secret" class="hidden">
+God is walking with you through everything.
+You are deeply loved.
+</p>
+
+<!-- PHOTO -->
+<div class="card">
+  <h2>💜 Always Protected ✝️</h2>
+  <img src="family.jpg" class="main-photo">
+  <p>Covered in love. Never alone.</p>
+</div>
+
+<!-- MESSAGE -->
+<div class="card">
+  <h2>💜 A Message</h2>
+  <div id="letter"></div>
+</div>
+
+<!-- MUSIC -->
+<div class="card">
+  <h2>🎵 Peace Music</h2>
+  <button onclick="playMusic()">Play</button>
+</div>
+
+<!-- VERSE -->
+<div class="card">
+  <h2>✝️ Scripture</h2>
+  <p id="verse"></p>
+  <button onclick="newVerse()">New Verse</button>
+</div>
+
+<!-- PRAYER -->
+<div class="card">
+  <h2>🙏 Prayer</h2>
+  <button onclick="pray()">Pray for Me</button>
+  <p id="prayer"></p>
+</div>
+
+<p class="footer">stay strong… God’s got you ✝️💜</p>
+
+</div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
