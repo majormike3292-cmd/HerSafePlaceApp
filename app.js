@@ -15,4 +15,4 @@ document.getElementById("secret").classList.toggle("hidden");
 
 // MUSIC
 function playMusic(){
-window.open
+  
