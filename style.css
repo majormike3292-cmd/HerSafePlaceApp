@@ -7,3 +7,42 @@ border-radius:20px;
 .footer{
 opacity:0.6;
 margin-top:40px
+/* FLOATING HEARTS */
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+
+.hearts span{
+position:absolute;
+color:#ff69b4;
+font-size:20px;
+animation:floatUp 10s linear infinite;
+opacity:0.6;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+/* ANGEL GLOW */
+.main-photo{
+box-shadow:0 0 40px rgba(255,255,255,0.8);
+}
+
+/* FADE LETTER */
+#finalLetter{
+opacity:0;
+animation:fadeIn 6s forwards;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
