@@ -1,1 +1,116 @@
-
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--purple:#6b21a8;--gold:#f4d03f;--gold-soft:#fef3c7;
+--pink:#ff69b4;--pink-soft:#ffd6e7;
+--glass:rgba(255,255,255,0.06);--glass-b:rgba(255,255,255,0.12);
+--ft:'Cinzel',serif;--fb:'Cormorant Garamond',serif;--fs:'Lato',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+background:radial-gradient(ellipse at top,#1a0030 0%,#0a0015 50%,#000008 100%);
+background-attachment:fixed;color:#fff;font-family:var(--fb);
+font-size:18px;line-height:1.7;text-align:center;
+min-height:100vh;transition:background .6s,color .6s;overflow-x:hidden;
+}
+body.light{background:linear-gradient(135deg,#fef9ff,#f3e8ff 40%,#fce7f3);color:#2d0050}
+body.light .card{background:rgba(255,255,255,0.7);border:1px solid rgba(139,92,246,0.2);box-shadow:0 8px 32px rgba(139,92,246,0.15)}
+body.light .card h2{color:#6b21a8}
+body.light .card-sub{color:#7c3aed}
+body.light .scripture{color:#7c3aed}
+body.light .sacred-textarea,body.light .sacred-input{background:rgba(255,255,255,0.8);border-color:rgba(139,92,246,0.3);color:#2d0050}
+body.light .footer{color:#7c3aed}
+body.light .wellness-item{background:rgba(139,92,246,0.1);color:#4c1d95}
+body.light .remedy-item{border-left-color:#a855f7;color:#4c1d95}
+.hearts{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}
+.hearts span{position:absolute;animation:floatUp 12s linear infinite;opacity:0;bottom:-10%}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:.7}90%{opacity:.4}100%{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.stars span{position:absolute;background:#fff;border-radius:50%;animation:twinkle 4s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+.bg-glow{position:fixed;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(107,33,168,0.25),transparent 70%);pointer-events:none;z-index:0;animation:pulseGlow 6s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
+.container{position:relative;z-index:1;padding:20px 16px 60px;max-width:620px;margin:0 auto}
+.hero{padding:60px 0 30px;position:relative}
+.halo-ring{width:180px;height:180px;border:2px solid rgba(244,208,63,0.3);border-radius:50%;margin:0 auto 20px;box-shadow:0 0 60px rgba(244,208,63,0.15),inset 0 0 40px rgba(244,208,63,0.05);animation:haloSpin 20s linear infinite}
+@keyframes haloSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.title{font-family:var(--ft);font-size:clamp(2rem,8vw,3.5rem);font-weight:600;letter-spacing:.08em;color:var(--gold);cursor:pointer;text-shadow:0 0 40px rgba(244,208,63,0.6),0 0 80px rgba(244,208,63,0.2);animation:titleGlow 4s ease-in-out infinite}
+@keyframes titleGlow{0%,100%{text-shadow:0 0 40px rgba(244,208,63,0.6),0 0 80px rgba(244,208,63,0.2)}50%{text-shadow:0 0 60px rgba(244,208,63,0.9),0 0 120px rgba(244,208,63,0.4)}}
+.subtitle{font-family:var(--fb);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,0.7);margin-top:8px;letter-spacing:.05em}
+.sacred-reveal{margin-top:16px;font-style:italic;color:var(--gold-soft);font-size:1rem;animation:fadeIn 1.5s ease}
+.cross-divider{font-size:2rem;color:var(--gold);margin:24px 0 0;opacity:.6}
+.card{background:var(--glass);border:1px solid var(--glass-b);border-radius:20px;padding:28px 24px;margin:20px 0;backdrop-filter:blur(12px);box-shadow:0 8px 40px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.08);animation:slideUp .6s ease both;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 50px rgba(107,33,168,0.3),inset 0 1px 0 rgba(255,255,255,0.1)}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.glow-card{border-color:rgba(244,208,63,0.2);box-shadow:0 0 40px rgba(244,208,63,0.1),0 8px 40px rgba(0,0,0,0.3)}
+.card h2{font-family:var(--ft);font-size:1.2rem;letter-spacing:.06em;color:var(--gold);margin-bottom:12px;text-shadow:0 0 20px rgba(244,208,63,0.3)}
+.card-sub{font-size:.9rem;font-family:var(--fs);color:rgba(255,255,255,0.5);margin-bottom:16px;font-style:italic}
+.photo-frame{position:relative;display:inline-block;margin:16px 0}
+.main-photo{width:100%;max-width:280px;border-radius:50%;border:3px solid rgba(244,208,63,0.4);display:block;margin:0 auto;box-shadow:0 0 60px rgba(255,255,255,0.5),0 0 100px rgba(244,208,63,0.3);animation:angelGlow 4s ease-in-out infinite}
+@keyframes angelGlow{0%,100%{box-shadow:0 0 60px rgba(255,255,255,0.5),0 0 100px rgba(244,208,63,0.3)}50%{box-shadow:0 0 80px rgba(255,255,255,0.8),0 0 140px rgba(244,208,63,0.5)}}
+.verse-text{font-style:italic;color:rgba(255,255,255,0.8);margin:12px 0}
+.scripture{color:var(--gold-soft);font-style:italic;font-size:.95rem;opacity:.85;margin-top:8px}
+.big-verse{font-size:1.15rem;color:var(--gold-soft);min-height:60px;padding:16px;border-left:3px solid rgba(244,208,63,0.4);text-align:left;line-height:1.8}
+.letter-text{text-align:left;font-size:1.1rem;line-height:1.9;color:rgba(255,255,255,0.9)}
+.letter-text p{margin:6px 0;animation:fadeIn .8s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+button{cursor:pointer;transition:all .3s;font-family:var(--fs)}
+.btn-sacred{background:linear-gradient(135deg,#6b21a8,#a855f7);border:none;padding:12px 28px;border-radius:50px;color:#fff;font-size:.9rem;letter-spacing:.05em;box-shadow:0 4px 20px rgba(107,33,168,0.5);margin-top:12px}
+.btn-sacred:hover{background:linear-gradient(135deg,#7c3aed,#c084fc);transform:translateY(-2px);box-shadow:0 6px 30px rgba(107,33,168,0.7)}
+.btn-mode{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:12px 28px;border-radius:50px;color:#fff;font-size:.9rem}
+.btn-mode:hover{background:rgba(255,255,255,0.2)}
+.music-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.btn-music{background:linear-gradient(135deg,#0f172a,#1e3a5f);border:1px solid rgba(255,255,255,0.15);padding:12px 20px;border-radius:50px;color:#fff;font-size:.85rem;flex:1;min-width:100px}
+.btn-music:hover{background:linear-gradient(135deg,#1e3a5f,#1e40af);box-shadow:0 4px 20px rgba(30,64,175,0.5)}
+.love-btn{background:linear-gradient(135deg,#be185d,#ec4899);border:none;padding:14px 36px;border-radius:50px;color:#fff;font-size:1rem;letter-spacing:.05em;box-shadow:0 4px 30px rgba(236,72,153,0.5);animation:heartPulse 2s ease-in-out infinite}
+.love-btn:hover{background:linear-gradient(135deg,#ec4899,#f9a8d4);transform:scale(1.05)}
+@keyframes heartPulse{0%,100%{box-shadow:0 4px 30px rgba(236,72,153,0.5)}50%{box-shadow:0 4px 50px rgba(236,72,153,0.8)}}
+.tap-btn{background:transparent;border:2px solid var(--pink);font-size:2.5rem;border-radius:50%;width:90px;height:90px;display:flex;align-items:center;justify-content:center;margin:10px auto;animation:heartPulse 1.8s ease-in-out infinite;transition:transform .1s}
+.tap-btn:active{transform:scale(0.9)}
+.love-quotes-card{border-color:rgba(236,72,153,0.3);box-shadow:0 0 30px rgba(236,72,153,0.1),0 8px 40px rgba(0,0,0,0.3)}
+.quote-reveal{margin-top:20px;padding:20px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.2);border-radius:15px;animation:fadeIn 1s ease}
+.quote-reveal.hidden{display:none}
+.quote-icon{font-size:1.8rem;margin-bottom:10px}
+#loveQuoteText{font-family:var(--fb);font-style:italic;font-size:1.1rem;color:var(--pink-soft);line-height:1.8}
+.prayer-card{border-color:rgba(244,208,63,0.2)}
+.prayer-display{min-height:80px;padding:16px;border-left:3px solid rgba(244,208,63,0.4);text-align:left}
+.prayer-text{font-style:italic;font-size:1.05rem;color:var(--gold-soft);line-height:1.9}
+.affirmation-box{font-size:1.2rem;font-style:italic;color:rgba(255,255,255,0.9);padding:20px;border-radius:12px;background:rgba(255,255,255,0.04);min-height:60px;line-height:1.8}
+.sacred-input{width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:#fff;font-family:var(--fb);font-size:1rem;margin-bottom:10px;outline:none;transition:border-color .3s}
+.sacred-input:focus{border-color:rgba(244,208,63,0.5)}
+.gratitude-list{text-align:left;margin-top:16px}
+.gratitude-item{padding:10px 14px;margin:6px 0;background:rgba(255,255,255,0.04);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;font-size:.95rem;animation:fadeIn .5s ease}
+.sacred-textarea{width:100%;min-height:120px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:12px;color:#fff;font-family:var(--fb);font-size:1rem;padding:14px;outline:none;resize:vertical;transition:border-color .3s;line-height:1.7}
+.sacred-textarea:focus{border-color:rgba(244,208,63,0.4)}
+.save-msg{color:var(--pink-soft);font-size:.9rem;margin-top:8px;font-style:italic}
+.save-msg.hidden{display:none}
+.breath-circle{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(107,33,168,0.4),rgba(59,7,100,0.2));border:2px solid rgba(167,139,250,0.5);display:flex;align-items:center;justify-content:center;margin:20px auto 16px;font-size:.9rem;font-family:var(--ft);letter-spacing:.05em;color:rgba(255,255,255,0.8);transition:all .1s}
+@keyframes breathIn{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+.breath-circle.expand{animation:breathIn 4s ease-in-out}
+.wellness-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.wellness-item{background:rgba(255,255,255,0.05);border-radius:12px;padding:14px 8px;font-size:1.4rem;line-height:1.4;transition:background .3s}
+.wellness-item:hover{background:rgba(255,255,255,0.1)}
+.wellness-item small{display:block;font-size:.72rem;font-family:var(--fs);color:rgba(255,255,255,0.6);margin-top:4px}
+.remedy-list{text-align:left;margin-top:12px}
+.remedy-item{padding:10px 14px;margin:8px 0;border-left:3px solid rgba(107,33,168,0.6);font-size:.95rem;color:rgba(255,255,255,0.8)}
+.love-count{font-family:var(--ft);font-size:2.5rem;color:var(--pink);text-shadow:0 0 20px rgba(255,105,180,0.5);margin:8px 0}
+.milestone{font-style:italic;color:var(--gold-soft);font-size:.95rem;min-height:28px;animation:fadeIn .5s ease}
+.strength-verse{font-size:1.1rem;color:rgba(255,255,255,0.9);font-style:italic;padding:16px;border-left:3px solid rgba(244,208,63,0.5);text-align:left;min-height:60px;line-height:1.8}
+.promise-card{border-color:rgba(244,208,63,0.25)}
+.promise-box{font-size:1.1rem;font-style:italic;color:var(--gold-soft);padding:20px;border-radius:12px;background:rgba(244,208,63,0.05);border:1px solid rgba(244,208,63,0.15);min-height:70px;text-align:left;line-height:1.8}
+.final-letter-card{border:1px solid rgba(255,105,180,0.3);box-shadow:0 0 60px rgba(255,105,180,0.15),0 8px 40px rgba(0,0,0,0.3);background:rgba(139,0,55,0.08);padding:36px 28px;margin-top:30px}
+.final-title{font-family:var(--ft);font-size:1.4rem;color:var(--pink-soft);text-shadow:0 0 30px rgba(255,105,180,0.5);margin:20px 0 24px}
+.final-letter-text{font-family:var(--fb);font-size:1.1rem;line-height:2;color:rgba(255,255,255,0.92);text-align:left;padding:0 8px;min-height:100px}
+.dove-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:12px 0}
+.dove{font-size:1.8rem;animation:doveFloat 4s ease-in-out infinite}
+.dove:nth-child(2){animation-delay:.8s}
+.dove:nth-child(4){animation-delay:1.6s}
+@keyframes doveFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+.heart-final{font-size:1.5rem;animation:heartBeat 2s ease-in-out infinite}
+.heart-final:nth-child(2){animation-delay:.5s}
+.heart-final:nth-child(4){animation-delay:1s}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+.footer{margin-top:50px;padding-bottom:40px;opacity:.5;font-family:var(--ft);letter-spacing:.08em;font-size:.9rem}
+.hidden{display:none !important}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(107,33,168,0.5);border-radius:3px}
